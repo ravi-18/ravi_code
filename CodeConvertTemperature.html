@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suhu</title>
+</head>
+<body>
+    <h1 style="color: blue">Convert temperature</h1>
+    <input id="suhu" type="text" name="suhu" placeholder="C or F or K or R"> <input id="temp" type="number" name="temperatur" placeholder="value temperatur"> 
+    <button onclick="hitung();">HITUNG</button><br/>
+    <div id="output1"></div>
+    <div id="output2"></div>
+    <div id="output3"></div>
+    <div id="output4"></div>
+
+
+    <script type="text/javascript">
+        function hitung(){
+            var a = document.getElementById('suhu').value;
+            var b = document.getElementById('temp').value;
+            var C,F,R,K;
+
+            if (a == "C"){
+                R=(5/4)*b;
+                F=((9/5)*b)+32;
+                K=(1*b)+273;
+                console.log("R = "+R);
+                console.log("F = "+F);
+                console.log("K = "+K);
+                document.getElementById("output1").innerHTML="C = "+b; 
+                document.getElementById("output2").innerHTML="R = (5/4)*C ="+"(5/4)*"+b+" = "+R;
+                document.getElementById("output3").innerHTML="F=((9/5)*C)+32 = "+"((9/5)*"+b+")+32 = "+F;
+                document.getElementById("output4").innerHTML="K = C + 273 = "+ b+"+273 = "+K;
+            }else if(a == "F"){
+                C=(5/9)*(b-32);
+                R=(5/4)*C;
+                K=C+273;
+                console.log("C = "+C);
+                console.log("R = "+R);
+                console.log("K = "+K);
+                document.getElementById("output1").innerHTML="F = "+b; 
+                document.getElementById("output2").innerHTML="C = (5/9)*(F-32) = "+"(5/9)*("+b+"-32) = "+C;
+                document.getElementById("output3").innerHTML="R = (5/4)*C ="+"(5/4)*"+C+" = "+R;
+                document.getElementById("output4").innerHTML="K = C + 273 = "+ C+"+273 = "+K;
+            }else if(a == "R"){
+                C=(5/4)*b;
+                F=((9/5)*C)+32;
+                K=C+273;
+                console.log("C = "+C);
+                console.log("F = "+F);
+                console.log("K = "+K);
+                document.getElementById("output1").innerHTML="R = "+b; 
+                document.getElementById("output2").innerHTML="C = (5/4)*R = "+"(5/4)*"+b+" = "+C;
+                document.getElementById("output3").innerHTML="F=((9/5)*C)+32 = "+"((9/5)*"+b+")+32 = "+F;
+                document.getElementById("output4").innerHTML="K = C + 273 = "+ b+"+273 = "+K;
+            }else if(a == "K"){
+                C=b-273;
+                R=(5/4)*C;
+                F=((9/5)*C)+32;
+                console.log("C = "+C);
+                console.log("R = "+R);
+                console.log("F = "+F);
+                document.getElementById("output1").innerHTML="K = "+b; 
+                document.getElementById("output2").innerHTML="C = K-273 = "+b+"-273 = "+C;
+                document.getElementById("output3").innerHTML="F=((9/5)*C)+32 = "+"((9/5)*"+b+")+32 = "+F;
+                document.getElementById("output4").innerHTML="F=((9/5)*C)+32 = "+"((9/5)*"+b+")+32 = "+F;
+            }
+        }
+    </script>
+</body>
+</html>
